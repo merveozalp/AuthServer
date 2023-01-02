@@ -22,7 +22,7 @@ namespace AuthServer.Core.Repository
         {
             return new Response<T> { Data = data, StatusCode = statusCode , IsSuccess = true };
         }
-        public static Response<T> Succeess(int statusCode)
+        public static Response<T> Success(int statusCode)
         {
             return new Response<T> { Data = default, StatusCode = statusCode, IsSuccess = true };
         }

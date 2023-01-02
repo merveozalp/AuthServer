@@ -1,4 +1,6 @@
 ﻿using AuthServer.Core.Dtos;
+using AuthServer.Core.Entities;
+using AuthServer.Core.ErrorService;
 using AuthServer.Core.Repository;
 using System;
 using System.Collections.Generic;
@@ -12,5 +14,7 @@ namespace AuthServer.Core.Services
     {
         Task<Response<UserAppDto>> CreateUserAsync(CreateUserDto createUserDto);
         Task<Response<UserAppDto>> GetuserByNameAsync(string userName);
+        Task<Response<string>> LoginAsync(LoginDto login);
+
     }
 }

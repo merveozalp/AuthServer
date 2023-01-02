@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuthServer.Core.Services
+namespace AuthServer.Core.Dtos
 {
-    public interface IUnitOfWork
+    public class RefreshTokenDto
     {
-
+        public string RefreshToken { get; set; }
     }
 }

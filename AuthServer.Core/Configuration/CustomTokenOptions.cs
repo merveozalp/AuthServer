@@ -5,7 +5,7 @@ namespace AuthServer.Core.Configuration
 {
     public class CustomTokenOptions
     {
-        public List<String> Audince { get; set; }
+        public List<String> Audience { get; set; }
         public string Issuer { get; set; }
         public int AccessTokenExpiration { get; set; }
         public int RefreshTokenExpiration { get; set; }

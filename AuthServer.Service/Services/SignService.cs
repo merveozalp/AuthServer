@@ -7,11 +7,13 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace AuthServer.Service.Services
 {
-    internal static class SignService
+    // Key imzalama sınıfı
+    public static class SignService
     {
-        public static SecurityKey GetSecurityKey(string securityKey)
+        public static SecurityKey GetSymmetricSecurityKey(string securityKey)
         {
             return new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
         }
+       
     }
 }

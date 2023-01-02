@@ -8,13 +8,10 @@ namespace AuthServer.Core.ErrorService
 {
     public class ErrorDto
     {
-        public List<string> Eroors { get; private set; }
+        public List<string> Eroors { get; private set; }= new List<string>();
         public bool IsShow { get; private set; }
 
-        public ErrorDto()
-        {
-            Eroors = new List<string>();
-        }
+       
         public ErrorDto(string eroors, bool isShow)
         {
             Eroors.Add(eroors);
