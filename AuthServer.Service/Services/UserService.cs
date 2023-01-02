@@ -51,6 +51,20 @@ namespace AuthServer.Service.Services
             return Response<UserAppDto>.Success(_mapper.Map<UserAppDto>(user), 200);
          }
 
+        public async Task<Response<NoDataDto>> CreateUserRole(string userName)
+        {
+            if (!await _roleManager.RoleExistsAsync("Admin"))
+            {
+                await _roleManager.CreateAsync(new() { Name = "user" });
+                await _roleManager.CreateAsync(new() { Name = "Admin" });
+            }
+            var user = await _userManager.FindByNameAsync(userName);
+            await _userManager.AddToRoleAsync(user, "Admin");
+            await _userManager.AddToRoleAsync(user, "manager");
+
+            return Response<NoDataDto>.Success(200);
+        }
+
         public async Task<Response<UserAppDto>> GetuserByNameAsync(string userName)
         {
             var user = await _userManager.FindByNameAsync(userName);

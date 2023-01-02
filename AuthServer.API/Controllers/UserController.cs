@@ -59,7 +59,15 @@ namespace AuthServer.API.Controllers
             return Ok(loginUser);
 
         }
+        [HttpPost("CreateUserRoles/{userName}")]
+        public async Task<IActionResult> CreateUserRoles(string userName)
+        {
+           
+            
+            return Ok(await _userService.CreateUserRole(userName));
 
-        
+        }
+
+
     }
 }
